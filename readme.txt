@@ -1,5 +1,5 @@
-=== Woocommerce Teams ===
-Tags: woocommerce, teams, free
+=== WooCommerce Teams ===
+Tags: woocommerce, teams, free, fundraising, competition, non-profit, 
 Requires at least: 4.0
 Tested up to: 4.0
 Stable tag: trunk
