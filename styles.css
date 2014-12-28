@@ -1,0 +1,32 @@
+/************************************************
+STYLES FOR THE PLUGIN WOOCOMMERCE-TEAMS 
+(c)2014 - Rob Korobkin - rob.korobkin@gmail.com
+************************************************/
+
+
+#scoreBoard {
+	border: solid 1px #ccc;
+	padding: 10px; border: solid 1px #ccc; margin: 30px auto; background: white;
+}
+#scoreBoard .label 	{ padding-right: 20px;}
+#scoreBoard .bar 	{ height: 40px; border: solid 1px black; }
+#scoreBoard table 	{ border-collapse: collapse; }
+#scoreBoard td 		{ border: none; }
+
+
+
+#team_id { 
+	font-size: 13px;
+	height: 30px;
+}
+#team_id_field label, #team_name_field label {
+	font-style: italic;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 17px;
+	padding-bottom: 5px;
+}
+#team_name_field {
+	border: dotted 1px #ccc;
+	padding: 3px 8px 6px;
+}			
