@@ -10,9 +10,9 @@ License: GPLv2
 This plugin enables shop administrators to create teams that buyers can associate their orders with in order to stage fundraising competitions.
 
 == Installation ==
-This plugin requires the installation of WooCommerce and Advanced Custom Fields.
+This plugin requires WooCommerce.
 
 == Screenshots ==
-http://rob.mayfirst.org/plugins/woocommerce-teams/screenshots/screenshot1.png
-http://rob.mayfirst.org/plugins/woocommerce-teams/screenshots/screenshot2.png
-http://rob.mayfirst.org/plugins/woocommerce-teams/screenshots/screenshot3.png
+1. The WooCommerce Teams Configuration Interface
+2. These fields are added at checkout for customers to select their team.
+3. Use the short-code [wooteams-scoreboard] to render a bar graph comparing the different teams.
