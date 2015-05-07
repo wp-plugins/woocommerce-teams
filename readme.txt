@@ -1,7 +1,7 @@
 === WooCommerce Teams ===
 Tags: woocommerce, teams, free, fundraising, competition, non-profit, 
 Requires at least: 4.0
-Tested up to: 4.0
+Tested up to: 4.2.2
 Stable tag: trunk
 Contributors: robkorobkin
 License: GPLv2
