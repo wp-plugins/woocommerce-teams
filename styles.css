@@ -11,7 +11,7 @@ STYLES FOR THE PLUGIN WOOCOMMERCE-TEAMS
 #scoreBoard .label 	{ padding-right: 20px;}
 #scoreBoard .bar 	{ height: 40px; border: solid 1px black; }
 #scoreBoard table 	{ border-collapse: collapse; }
-#scoreBoard td 		{ border: none; }
+#scoreBoard td 		{ border: none; max-width: none !important; }
 
 
 

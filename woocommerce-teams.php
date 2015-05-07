@@ -214,7 +214,7 @@ function wooteams_scoreboard_display( $atts ){
 	
 
 	$bargraphColor = $pluginState['wcft-barGraphColor'] != '' ? $pluginState['wcft-barGraphColor'] : 'green';
-	$bargraphScale = $pluginState['wcft-barGraphScale'] != '' ? $pluginState['wcft-barGraphScale'] : 10;
+	
 	
 	
 	// ITERATE THROUGH ALL ORDERS AND TALLY UP TEAMS - THIS MAY TAKE A WHILE... COULD BE CACHED etc.
@@ -224,7 +224,7 @@ function wooteams_scoreboard_display( $atts ){
 	);
 	$posts_array = get_posts( $args );
 	$scores = array();
-	
+
 	foreach($posts_array as $post){
 
 		$status = $post -> post_status;
@@ -254,14 +254,23 @@ function wooteams_scoreboard_display( $atts ){
 	}
 	usort($scores, sortTeams);
 
+	// get aspect ratio
+	$max = 0;
+	foreach($scores as $team){
+		if($team["total"] > $max) $max = $team["total"];
+	}
+	$bargraphScale = $max / 300;
+		
 
+	// bar graph scale
+	$bargraphScale = $pluginState['wcft-barGraphScale'] != '' ? $pluginState['wcft-barGraphScale'] : 10;
 
 	
 	$html = '<table id="scoreBoard">';
 	foreach($scores as $teamName => $team){
 		$html .= 	"<tr>" . 
 						'<td class="label">' . $team["teamName"] . " (" . count($team["orders"]) . ")</td>" .
-						'<td style="line-height: 40px;  font-size: 13px;">$' . $team['total'] . "</td>" .
+						'<td style="line-height: 40px;  font-size: 13px;">$' . number_format($team['total'], 2) . "</td>" .
 						"<td>" . 
 							'<div  class="bar" style="width: ' . ($team['total'] / $bargraphScale) . 'px;
 														background: ' . $bargraphColor . '"></div>' .
