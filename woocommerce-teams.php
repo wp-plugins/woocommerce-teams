@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Teams
  * Plugin URI: http://robkorobkin.org/woocommerce-teams/
  * Description: This plugin enables the creation of fundraising teams within WooCommerce.
- * Version: 1.2
+ * Version: 1.3
  * Author: Rob Korobkin
  * Author URI: http://robkorobkin.org
  * License: GPL2
@@ -261,10 +261,6 @@ function wooteams_scoreboard_display( $atts ){
 	}
 	$bargraphScale = $max / 300;
 		
-
-	// bar graph scale
-	$bargraphScale = $pluginState['wcft-barGraphScale'] != '' ? $pluginState['wcft-barGraphScale'] : 10;
-
 	
 	$html = '<table id="scoreBoard">';
 	foreach($scores as $teamName => $team){
