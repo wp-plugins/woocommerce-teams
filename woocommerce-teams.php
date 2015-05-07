@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: WooCommerce Teams
- * Plugin URI: http://rob.mayfirst.org/woocommerce-teams/
+ * Plugin URI: http://robkorobkin.org/woocommerce-teams/
  * Description: This plugin enables the creation of fundraising teams within WooCommerce.
  * Version: 1.1
  * Author: Rob Korobkin
- * Author URI: http://URI_Of_The_Plugin_Author
+ * Author URI: http://robkorobkin.org
  * License: GPL2
  
   Copyright 2014 Rob Korobkin (email: rob.korobkin@gmail.com)
