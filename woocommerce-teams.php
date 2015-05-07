@@ -181,7 +181,7 @@ add_action( 'woocommerce_checkout_update_order_meta', 'save_wooteam_on_checkout'
 function save_wooteam_on_checkout( $order_id ) {
 	
 	// get teams
-	$teamsRaw = explode(',', esc_attr( get_option('teamList') ));
+	$teamsRaw = explode(',', esc_attr( get_option('wcft-teamList') ));
 	$teams[] = "Select your fundraising team...";
 	foreach($teamsRaw as $t) $teams[] = trim($t);
 	
