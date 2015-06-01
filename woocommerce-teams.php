@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Teams
  * Plugin URI: http://robkorobkin.org/woocommerce-teams/
  * Description: This plugin enables the creation of fundraising teams within WooCommerce.
- * Version: 1.3
+ * Version: 1.4
  * Author: Rob Korobkin
  * Author URI: http://robkorobkin.org
  * License: GPL2
@@ -38,7 +38,8 @@
 		'wcft-teamList', 
 		'wcft-allowUserSubmittedTeams', 
 		'wcft-barGraphColor', 
-		'wcft-barGraphScale'
+		'wcft-barGraphScale',
+		'wcft-requireTeamSelection'
 	);
 	
 	
@@ -100,15 +101,22 @@
 					<form style="padding: 30px;" id="wooteams-adminform" method="post" action="options.php">';
 					
 		settings_fields( 'wooteams-settings-group' );
-		do_settings_sections( 'wooteams-settings-group' );					
-		
+		do_settings_sections( 'wooteams-settings-group' );	
+				
 		$checked = ($pluginState['wcft-allowUserSubmittedTeams'] == "on") ? "checked" : "";
+		$requireChecked = ($pluginState['wcft-requireTeamSelection'] == "on") ? "checked" : "";
 					
 		echo			'<h2>Woocommerce Team Settings</h2>
 						<table>
 							<tr>
 								<td><label for="allowUserSubmitted">Allow User Submitted Teams</label></td>
 								<td><input type="checkbox" name="wcft-allowUserSubmittedTeams" id="allowUserSubmitted" ' . $checked  . ' /></td>
+							</tr>
+							<tr>
+								<td><label for="requireTeamSelection">Require Team Selection</label></td>
+								<td><input type="checkbox" name="wcft-requireTeamSelection" 
+									id="requireTeamSelection" ' . $requireChecked  . ' />
+								</td>
 							</tr>
 							<tr>
 								<td><label for="barGraphColor">Bar Graph Color (hex)</label></td>						
@@ -150,7 +158,8 @@ function add_wooteams_to_checkout( $fields ) {
 	$team['team_id'] = array(
 		'type' => "select",
 		'label' => "Are you helping to raise money for a particular team?",	
-		'options' => $teams
+		'options' => $teams,
+		'required' => esc_attr(get_option('wcft-requireTeamSelection'))
 	);
 	
 	$allowWriteIn = esc_attr(get_option('wcft-allowUserSubmittedTeams'));
@@ -163,6 +172,8 @@ function add_wooteams_to_checkout( $fields ) {
 	
 	// add it to the top of the billing column
 	$fields["billing"] = $team + $fields["billing"];
+	
+	//print_r($fields);
 	
     return $fields;
 }
